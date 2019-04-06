@@ -1,0 +1,43 @@
+
+.wrapper {
+    text-align: center;
+    margin: 40px;
+    font-size: 50px;
+}
+.gameBoard {
+    background: black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.category {
+    width: 20%;
+    margin: 10px;
+    padding: 40px;
+    background: blue;
+    color: white;
+    font-family: 'Heebo', sans-serif;
+}
+
+.questions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.question {
+    margin: 30px;
+    padding: 30px 50px;
+    background: blue;
+    color: yellow;
+    width: 20%;
+    margin: 10px;
+    padding: 40px;
+}
