@@ -1,26 +1,33 @@
 
 .wrapper {
-    text-align: center;
-    margin: 40px;
-    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
 }
+
+
+
 .gameBoard {
     background: black;
     display: flex;
     flex-direction: column;
     text-align: center;
+    width: 80%;
+    height: 100%;
 }
 
 .categories {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    width:100%;
+    height: 16.6%;
 }
 
 .category {
     width: 20%;
-    margin: 10px;
-    padding: 40px;
+    margin: 5px;
     background: blue;
     color: white;
     font-family: 'Heebo', sans-serif;
@@ -29,15 +36,12 @@
 .questions {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    height: 16.66%;
 }
 
 .question {
-    margin: 30px;
-    padding: 30px 50px;
     background: blue;
     color: yellow;
     width: 20%;
-    margin: 10px;
-    padding: 40px;
+    margin: 5px;
 }
