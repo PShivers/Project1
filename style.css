@@ -7,8 +7,6 @@
     align-items: center;
 }
 
-
-
 .gameBoard {
     background: black;
     display: flex;
@@ -23,14 +21,15 @@
     flex-direction: row;
     width:100%;
     height: 16.6%;
+    margin-bottom: 5px;
 }
 
 .category {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
-    margin: 5px;
+    width: 16.66%;
+    margin: 3px;
     background: blue;
     color: white;
     font-family: 'Heebo', sans-serif;
@@ -48,6 +47,10 @@
     align-items: center;
     background: blue;
     color: yellow;
-    width: 20%;
-    margin: 5px;
+    width: 16.6%;
+    margin: 3px;
+}
+
+.scoreboard {
+    background: black;
 }
