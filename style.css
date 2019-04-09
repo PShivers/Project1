@@ -13,7 +13,7 @@
     background: black;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    /* text-align: center; */
     width: 80%;
     height: 100%;
 }
@@ -26,6 +26,9 @@
 }
 
 .category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 20%;
     margin: 5px;
     background: blue;
@@ -40,6 +43,9 @@
 }
 
 .question {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: blue;
     color: yellow;
     width: 20%;
