@@ -60,6 +60,12 @@
     margin: 3px;
 }
 
+.question:hover {
+    color: blue;
+    background: yellow;
+    cursor: pointer;
+}
+
 .scoreBoard {
     display: flex;
     flex-direction: row;
