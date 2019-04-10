@@ -82,27 +82,43 @@
     background: rgb(213, 146, 3);
 }
 
-.modal {
+.modalOverlay {
     display: none;
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.9);
+    position: fixed;
     left: 0;
     top: 0;
     z-index: 1;
-    height: 50%;
-    width: 50%;
+    height: 100%;
+    width: 100%;
 }
 
 .currentQ {
-    padding: 10px;
+    font-size: 250%;
+    color: white;
+}
+
+.ans1, .ans2, .ans3 {
+    font-size: 150%;
+    color: yellow;
+    border-color: yellow;
+    background: blue;
+    width: 80%;
+    height: 10%;
+    margin: .15em .15em 1em .15em;
+}
+
+.ans1, .ans2, .ans3:hover {
+    cursor: pointer;
 }
 
 .modalText {
     background: rgb(7, 33, 177);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    width: 40%;
-    height: 100%;
-    margin: 0 30%;
+    width: 50%;
+    height: 50%;
+    margin: 12% 25% 0;
 }

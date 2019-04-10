@@ -3,11 +3,11 @@ $(function () {
 
     $(".c1q1").click(function () {
         console.log("c1q1");
-        $(".modal").show();
+        $(".modalOverlay").show();
     });
 
     $(".ans1").click(function () {
-        $(".modal").hide();
+        $(".modalOverlay").hide();
     });
 
 });
