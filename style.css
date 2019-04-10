@@ -44,7 +44,7 @@
 }
 
 .questions {
-    font-size: 3em;
+    /* font-size: 300%; */
     display: flex;
     flex-direction: row;
     height: 16.66%;
@@ -58,6 +58,7 @@
     color: yellow;
     width: 16.6%;
     margin: 3px;
+    font-size: 300%;
 }
 
 .question:hover {
