@@ -50,7 +50,7 @@
     height: 16.66%;
 }
 
-.question {
+.questions div {
     display: flex;
     justify-content: center;
     align-items: center;
