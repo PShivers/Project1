@@ -36,15 +36,18 @@ let currentQObj;
 let selectedA;
 let newScore;
 
-// let calculateScore = function () {
-//     if (selectedA === rightAns) {
-//         console.log("correct!")
-//         console.log(currentQObj.amount)
-//         //add selectedQ value to player score
-//         newScore = player1Score + currentQObj.amount;
-//         player1Score = newScore;
-//     }
-// }
+let calculateScore = function () {
+    if (selectedA === rightAns) {
+        console.log("correct!")
+        console.log("quesition value is " + currentQObj.amount)
+        //add selectedQ value to player score
+        player1Score += currentQObj.amount;
+        console.log("player1Score is " + player1Score)
+        $(".p1-score").html("$" + player1Score)
+    }
+}
+
+
 
 //start jQuery
 $(function () {
@@ -73,7 +76,6 @@ $(function () {
                 rightAns = qAndA[i].rightAns;
                 currentQObj = qAndA[i]
             }
-
         }
         //start timer
 
@@ -81,27 +83,34 @@ $(function () {
         $(".modalOverlay").show();
 
         //get unique id of ansBtn pressed (may need to be above in for or if loop)
-        $(".ansBtn").click(function () {
-            let selectedA = $(this).attr('class').split(' ')[1]
-            console.log(selectedA);
-            console.log(rightAns);
-            if (selectedA === rightAns) {
-                console.log("correct!")
-                console.log("quesition value is " + currentQObj.amount)
-                //add selectedQ value to player score
-                player1Score += currentQObj.amount;
-                console.log("player1Score is " + player1Score)
-                $(".p1-score").html("$" + player1Score)
-            }
-            //clear div of selectedQ
 
-            //disable click function of selectedQ
-        })
 
     })
 
-    $(".ans1, .ans2, .ans3").click(function () {
-        $(".modalOverlay").hide();
-    });
+    $(".ansBtn").on('click', function () {
+        let selectedA = $(this).attr('class').split(' ')[1]
+        console.log(selectedA);
+        console.log(rightAns);
+        if (selectedA === rightAns) {
+            console.log("correct!")
+            console.log("quesition value is " + currentQObj.amount)
+            //add selectedQ value to player score
+            player1Score = player1Score + currentQObj.amount;
+            console.log("player1Score is " + player1Score)
+            $(".p1-score").html("$" + player1Score)
+            $(".modalOverlay").hide();
+        } else {
+            console.log("wrong answer");
+            player1Score = player1Score - currentQObj.amount;
+            $(".p1-score").html("$" + player1Score)
+            $(".modalOverlay").hide();
+        }
+
+        //clear div of selectedQ
+
+        //disable click function of selectedQ
+    })
+    //now that modal is revealed and question/answers displayed
+
 
 });
