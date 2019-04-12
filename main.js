@@ -10,11 +10,11 @@
 // },
 
 let qAndA = [
-    //Category 1 Get an Education
+    //Category 1 Rick And Morty
     {
         id: "c1q1",
-        question: "It's a public school offering special instruction that's designed to \"attract\" a diverse student body.",
-        ans1: "What is a magnet school?",
+        question: "He wrote the unforgettable lyric \"She's a very kinky girl, the kind you don't take home to Mother\"",
+        ans1: "Who is Rick James?",
         ans2: "What is a vocational school?",
         ans3: "What is a montesorri school?",
         rightAns: "ans1",
@@ -22,26 +22,26 @@ let qAndA = [
     },
     {
         id: "c1q2",
-        question: "From a word for \"seed\", it's a college that prepares students to be priests, ministers or rabbis",
-        ans1: "What is a synagogue?",
-        ans2: "What is a seminary?",
-        ans3: "What is a vestiary?",
-        rightAns: "ans2",
+        question: "In the late 1800s, an era of tycoons, Joy Morton acquired a company & became the big man in this home product.",
+        ans1: "What is salt?",
+        ans2: "What is pepper?",
+        ans3: "What is Sweet-N-Low?",
+        rightAns: "ans1",
         amount: 400
     },
     {
         id: "c1q3",
-        question: "Influenced by Friedrich Froebel, in 1873 Susan Blow founded America's first public one of these for little kids in St. Louis.",
-        ans1: "",
-        ans2: "",
-        ans3: "What is a kindergarten?",
+        question: "\"Guardian\" Rocket Raccoon is derisively called by the name of this mascot of the National Wildlife Federation.",
+        ans1: "Who is Ricky Raccoon?",
+        ans2: "Who is Mort the Turtle?",
+        ans3: "Who is Ranger Rick?",
         rightAns: "ans3",
         amount: 600
     },
     {
         id: "c1q4",
-        question: "In France, ecole is \"school\" & this is the word for a secondary school.",
-        ans1: "What is a lycée?",
+        question: "John Mortimer's stories about this odd British defense lawyer \"of the Bailey\" were collected in \"Forever\" him.",
+        ans1: "Who is Rumpole?",
         ans2: "",
         ans3: "",
         rightAns: "ans1",
@@ -49,56 +49,56 @@ let qAndA = [
     },
     {
         id: "c1q5",
-        question: "In the painting \"The School of Athens\", these two great teachers are the center of attention.",
-        ans1: "",
-        ans2: "Who are Plato and Aristotle?",
-        ans3: "",
+        question: "Part of the purpose driven life of this evangelical pastor was founding the Saddleback megachurch.",
+        ans1: "Who is Mortimer Lang?",
+        ans2: "Who is Rick Warren?",
+        ans3: "Who is Richard Wayne Gary Wayne?",
         rightAns: "ans2",
         amount: 1000
     },
-    //Category 2 Queen Sized
+    //Category 2 Show me what you got
     {
         id: "c2q1",
-        question: "Queen Maria II of this country was born in Brazil in 1819.",
-        ans1: "What is Portugal",
-        ans2: "",
-        ans3: "",
+        question: "Showing what you got on this device was expensive when it debuted in the '70s costing about $1,200.",
+        ans1: "What is a VHS system?",
+        ans2: "What is a LaserDisc player?",
+        ans3: "What is a zoetrope?",
         rightAns: "ans1",
         amount: 200
     },
     {
         id: "c2q2",
-        question: "The second Spanish queen of the name, she had a troubled reign, ending in her overthrow in 1868.",
-        ans1: "",
-        ans2: "Who is Isabella?",
+        question: "You think you got the stones to play this sport? Well, if you have the granite type, you sure do.",
+        ans1: "What is bocce ball",
+        ans2: "What is curling?",
         ans3: "",
         rightAns: "ans2",
         amount: 400
     },
     {
         id: "c2q3",
-        question: "As queen of Egypt in the 1300s B.C., she played a prominent role in the cult of the sun god Aton",
-        ans1: "",
-        ans2: "",
-        ans3: "Who is Nefertiti?",
+        question: "This instrument has 7 main strings & 12 or more sympathetic ones.",
+        ans1: "What is a lyre?",
+        ans2: "What is a resonator?",
+        ans3: "What is a sitar?",
         rightAns: "ans3",
         amount: 600
     },
     {
         id: "c2q4",
-        question: "The 18th century war of this \"Succession\" helped keep Maria Theresa as ruler but cost her Silesia",
-        ans1: "",
-        ans2: "What is the War of the Austrian Succession?",
-        ans3: "",
+        question: "Your antipasto might combine pepperoni & these, also called Tuscan peppers.",
+        ans1: "What are banana peppers?",
+        ans2: "What are pepperoncinis?",
+        ans3: "What are poblano peppers?",
         rightAns: "ans2",
         amount: 800
     },
     {
         id: "c2q5",
-        question: "Queen of the Iceni tribe, she led a British revolt vs. the Romans that saw her defeated in 60 A.D.",
-        ans1: "",
-        ans2: "",
-        ans3: "Who is Boudicea",
+        question: "This type of sleeve shares its name with a type of swinging doors.",
+        ans1: "What is draped?",
+        ans2: "What is saloon?",
+        ans3: "What is batwing?",
         rightAns: "ans3",
         amount: 1000
     },
@@ -169,7 +169,7 @@ let clearClass;
 //         //add selectedQ value to player score
 //         player1Score = player1Score + currentQObj.amount;
 //         console.log("player1Score is " + player1Score);
-//         $(".p1-score").html("$" + player1Score);
+//         $(".p1-score").html("$" + player1Score);f
 //         $(".modalOverlay").hide();
 //     } else {
 //         console.log("wrong answer");
@@ -221,10 +221,13 @@ $(function () {
 
     })
 
+    //now that modal is revealed and question/answers displayed
     $(".ansBtn").on('click', function () {
         questionCount--;
         console.log(questionCount);
         let selectedA = $(this).attr('class').split(' ')[1]
+        //clear div of selectedQ
+        //disable click function of selectedQ
         $(".question").addClass("done");
         console.log(selectedA);
         console.log(rightAns);
@@ -247,14 +250,13 @@ $(function () {
         }
         //final jeopardy prompt
         if (questionCount === 0) {
+            //pop up final question modal
+            //check to see if final score is greater than zero
             console.log("all questions answered")
         }
 
-        //clear div of selectedQ
 
-        //disable click function of selectedQ
     })
-    //now that modal is revealed and question/answers displayed
 
 
 });
