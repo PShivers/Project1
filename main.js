@@ -102,29 +102,29 @@ let qAndA = [
         rightAns: "ans3",
         amount: 1000
     },
-    // Category 3 ALL IN A DAY'S WORK
+    // Category 3 Keep summer safe
     {
         id: "c3q1",
-        question: "First thing, this daily trip to the ol' salt mine, averaging about 30 minutes each way in the L.A. area.",
+        question: "It sounds like a swimming style, but this occurs when your body temperature rises to 104 degrees; be wary.",
         ans1: "",
         ans2: "",
-        ans3: "What is a commute?",
+        ans3: "What is heatstroke?",
         rightAns: "ans3",
         amount: 200
     },
     {
         id: "c3q2",
-        question: "Midmorning, a break for this beverage said to have been discovered by a 9th century goat herder.",
-        ans1: "What is coffee?",
-        ans2: "What is tea?",
-        ans3: "What is kombucha?",
+        question: "The CDC recommends 4-sided fencing around these to keep youngsters safe.",
+        ans1: "What is a pool?",
+        ans2: "What is a trampoline?",
+        ans3: "What is ?",
         rightAns: "ans1",
         amount: 400
     },
     {
         id: "c3q3",
-        question: "Uh oh! A visit from HR, this department.",
-        ans1: "What is human resources?",
+        question: "Swim parallel to the shore to reach safety if you encounter one of these swift-moving currents that can move at 8 feet per second.",
+        ans1: "What is a riptide?",
         ans2: "",
         ans3: "",
         rightAns: "ans1",
@@ -132,19 +132,19 @@ let qAndA = [
     },
     {
         id: "c3q4",
-        question: "Let's get out of here before the boss asks us to work this, exemptions from which are listed in the FLSA.",
-        ans1: "",
+        question: "Products with this number at 30 block 97% of UVB rays, which is pretty darn good.",
+        ans1: "What is ABV?",
         ans2: "",
-        ans3: "What is overtime?",
+        ans3: "What is SPF?",
         rightAns: "ans3",
         amount: 800
     },
     {
         id: "c3q5",
-        question: "An 8-hour day & I made 40 buttons, so divide output by input to get this measure, 5 per hour",
-        ans1: "",
-        ans2: "What is productivity?",
-        ans3: "",
+        question: "Kingsford specifies don't add this liquid, that they also make, to briquets that are already hot or burning.",
+        ans1: "What is kerosene?",
+        ans2: "What is lighter fluid?",
+        ans3: "What is motor oil?",
         rightAns: "ans2",
         amount: 1000
     },
