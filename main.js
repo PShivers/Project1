@@ -150,7 +150,8 @@ let qAndA = [
     },
     //Category 4 - 
 ];
-
+let fJExplanation = "Final Question! This question is worth $4000 points."
+let finalQ = "Mark Twain referred to her as the little lady who started the Civil War."
 let questionCount = 30;
 let player1Score = 0;
 let player2Score = 0;
@@ -187,7 +188,7 @@ let spentQuestions = ['hi'];
 $(function () {
 
     console.log("js + jquery linked");
-    console.log(spentQuestions)
+    // console.log(spentQuestions)
     $(".p1-score").html("$" + player1Score);
     $(".p2-score").html("$" + player2Score);
     $(".start-btn").click(function () {
@@ -197,47 +198,31 @@ $(function () {
 
     //clicking any question brings up modal
     $(".question").click(function () {
-        //clear point value from div
-
         //store unique id class of div clicked in variable
         selectedQ = $(this).attr('class').split(' ')[1];
-        // console.log(selectedQ);
-        for (let i = 0; i < spentQuestions.length; i++) {
-            if (selectedQ === spentQuestions[i]) {
-                console.log(selectedQ);
-                console.log(spentQuestions);
-                alert("please pick a valid question")
-            } else {
-                // console.log(spentQuestions)
-                console.log("pop modal and populate q and a");
-                for (let j = 0; j < qAndA.length; j++) {
-                    if (selectedQ === qAndA[i].id) {
-                        // console.log("matching")
-                        //then push items inside question[i] to modal
-                        $(".currentQText").html(qAndA[i].question);
-                        $(".ans1").html(qAndA[i].ans1);
-                        $(".ans2").html(qAndA[i].ans2);
-                        $(".ans3").html(qAndA[i].ans3);
-                        rightAns = qAndA[i].rightAns;
-                        currentQObj = qAndA[i]
-                        $(this).html("");
-                    }
-                } $(".modalOverlay").show();
-                
-            }
-        }spentQuestions.push(selectedQ);
-        //clear click and hover functionality
-        //propagate object values into modal
+        $(this).off('click');
+        console.log(selectedQ);
+        for (let i = 0; i < qAndA.length; i++) {
+            if (selectedQ === qAndA[i].id) {
+                console.log("matching")
+                //then push items inside question[i] to modal
+                $(".currentQText").html(qAndA[i].question);
+                $(".ans1").html(qAndA[i].ans1);
+                $(".ans2").html(qAndA[i].ans2);
+                $(".ans3").html(qAndA[i].ans3);
+                rightAns = qAndA[i].rightAns;
+                currentQObj = qAndA[i]
+                $(this).html("");
+            } $(".modalOverlay").show();
+        };
+    });
+    //clear click and hover functionality
+    //propagate object values into modal
 
-        //start timer
+    //start timer
 
 
-
-
-
-    })
-
-    //now that modal is revealed and question/answers displayed
+    //on answering
     $(".ansBtn").on('click', function () {
         questionCount--;
         console.log(questionCount);
@@ -264,8 +249,11 @@ $(function () {
             $(".modalOverlay").hide();
         }
         //final jeopardy prompt
-        if (questionCount === 0) {
+        if (questionCount === 29) {
             //pop up final question modal
+            $(".final-modal").css("display", "flex");
+            $(".fj-explanation").html(fJExplanation);
+            $(".final-question").html(finalQ)
             //check to see if final score is greater than zero
             console.log("all questions answered")
         }

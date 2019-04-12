@@ -112,7 +112,7 @@
     height: 16.66%;
 }
 
-.questions div {
+.question {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -212,7 +212,7 @@
 }
 
 .final-modal {
-    display:flex;
+    display:none;
     justify-content: center;
     align-items: center;
     background: transparent;
@@ -225,8 +225,10 @@
 }
 
 .final-jeopardy {
-    background: blue;
-    height: 50%;
-    width: 50%;
+    background: #060CE9;
+    height: 75%;
+    width: 70%;
+    border-style: inset;
+    color: white;
     
 }
