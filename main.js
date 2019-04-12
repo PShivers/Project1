@@ -15,8 +15,8 @@ let qAndA = [
         id: "c1q1",
         question: "He wrote the unforgettable lyric \"She's a very kinky girl, the kind you don't take home to Mother\"",
         ans1: "Who is Rick James?",
-        ans2: "What is a vocational school?",
-        ans3: "What is a montesorri school?",
+        ans2: "Who is James Brown?",
+        ans3: "Who is Little Richard?",
         rightAns: "ans1",
         amount: 200
     },
@@ -160,6 +160,7 @@ let currentQObj;
 let selectedA;
 let newScore;
 let clearClass;
+let spentQuestions = ['hi'];
 
 // let calculateScore = function () {
 //     if (selectedA === rightAns) {
@@ -184,39 +185,54 @@ let clearClass;
 
 //start jQuery
 $(function () {
+
     console.log("js + jquery linked");
+    console.log(spentQuestions)
     $(".p1-score").html("$" + player1Score);
     $(".p2-score").html("$" + player2Score);
+    $(".start-btn").click(function () {
+        console.log("start btn clicked")
+        $(".start-modal").hide();
+    });
 
     //clicking any question brings up modal
     $(".question").click(function () {
         //clear point value from div
-        $(this).html("");
-        //clear click and hover functionality
 
         //store unique id class of div clicked in variable
         selectedQ = $(this).attr('class').split(' ')[1];
-        clearClass = $(this).attr('class').split(' ')[0];
-        console.log(selectedQ);
-        //propagate object values into modal
-        for (let i = 0; i < qAndA.length; i++) {
-            if (selectedQ === qAndA[i].id) {
-                // console.log("matching")
-                //then push items inside question[i] to modal
-                $(".currentQText").html(qAndA[i].question);
-                $(".ans1").html(qAndA[i].ans1);
-                $(".ans2").html(qAndA[i].ans2);
-                $(".ans3").html(qAndA[i].ans3);
-                rightAns = qAndA[i].rightAns;
-                currentQObj = qAndA[i]
+        // console.log(selectedQ);
+        for (let i = 0; i < spentQuestions.length; i++) {
+            if (selectedQ === spentQuestions[i]) {
+                console.log(selectedQ);
+                console.log(spentQuestions);
+                alert("please pick a valid question")
+            } else {
+                // console.log(spentQuestions)
+                console.log("pop modal and populate q and a");
+                for (let j = 0; j < qAndA.length; j++) {
+                    if (selectedQ === qAndA[i].id) {
+                        // console.log("matching")
+                        //then push items inside question[i] to modal
+                        $(".currentQText").html(qAndA[i].question);
+                        $(".ans1").html(qAndA[i].ans1);
+                        $(".ans2").html(qAndA[i].ans2);
+                        $(".ans3").html(qAndA[i].ans3);
+                        rightAns = qAndA[i].rightAns;
+                        currentQObj = qAndA[i]
+                        $(this).html("");
+                    }
+                } $(".modalOverlay").show();
+                
             }
-        }
+        }spentQuestions.push(selectedQ);
+        //clear click and hover functionality
+        //propagate object values into modal
+
         //start timer
 
-        //show modal containing question and answer options pulled from corresponding object
-        $(".modalOverlay").show();
 
-        //get unique id of ansBtn pressed (may need to be above in for or if loop)
+
 
 
     })
@@ -225,16 +241,15 @@ $(function () {
     $(".ansBtn").on('click', function () {
         questionCount--;
         console.log(questionCount);
+        //get unique id of ansBtn pressed (may need to be above in for or if loop)
         let selectedA = $(this).attr('class').split(' ')[1]
-        //clear div of selectedQ
-        //disable click function of selectedQ
         $(".question").addClass("done");
         console.log(selectedA);
         console.log(rightAns);
         // calculateScore();
         if (selectedA === rightAns) {
             console.log("correct!");
-            alert("Correct Answer");
+            // alert("Correct Answer");
             console.log("quesition value is " + currentQObj.amount);
             //add selectedQ value to player score
             player1Score = player1Score + currentQObj.amount;
@@ -243,7 +258,7 @@ $(function () {
             $(".modalOverlay").hide();
         } else {
             console.log("wrong answer");
-            alert("Wrong Answer");
+            // alert("Wrong Answer");
             player1Score = player1Score - currentQObj.amount;
             $(".p1-score").html("$" + player1Score)
             $(".modalOverlay").hide();
@@ -260,4 +275,4 @@ $(function () {
 
 
 });
-
+//end jQuery
