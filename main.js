@@ -1,15 +1,6 @@
 
-// {
-//     id: "",
-//     question: "",
-//     ans1: "",
-//     ans2: "",
-//     ans3: "",
-//     rightAns: "",
-//     amount: 0
-// },
-
 let qAndA = [
+    //Answers taken from http://www.j-archive.com/showgame.php?game_id=6040
     //Category 1 Rick And Morty
     {
         id: "c1q1",
@@ -148,6 +139,155 @@ let qAndA = [
         rightAns: "ans2",
         amount: 1000
     },
+    //cat 4 My man
+    {
+        id: "c4q1",
+        question: "It's a 3-D representation of human form, dummy.",
+        ans1: "What is a dummy",
+        ans2: "What is a mannequin",
+        ans3: "What is maniform",
+        rightAns: "ans2",
+        amount: 200
+    },
+    {
+        id: "c4q2",
+        question: "Hand shackles.",
+        ans1: "What are manacles?",
+        ans2: "",
+        ans3: "",
+        rightAns: "ans1",
+        amount: 400
+    },
+    {
+        id: "c4q3",
+        question: "It's your destiny to know this 8-letter word means \"to show plainly\"",
+        ans1: "what is manifest?",
+        ans2: "",
+        ans3: "",
+        rightAns: "ans1",
+        amount: 600
+    },
+    {
+        id: "c4q4",
+        question: "A royal command, or one from a superior court to a lower one.",
+        ans1: "What is a ?",
+        ans2: "What is a mandate?",
+        ans3: "",
+        rightAns: "ans2",
+        amount: 800
+    },
+    {
+        id: "c4q5",
+        question: "It conveys air & fuel from the carburetor to the cylinders.",
+        ans1: "What is a manifort?",
+        ans2: "",
+        ans3: "What is a manifold?",
+        rightAns: "ans3",
+        amount: 1000
+    },
+    //cat 5 You Pass Butter
+    {
+        id: "c5q1",
+        question: "There's butter in this \"old fashioned\" Baskin-Robbins flavor as well as in its name.",
+        ans1: "What is butter rum?",
+        ans2: "What is butterscotch?",
+        ans3: "What is butter pecan?",
+        rightAns: "ans3",
+        amount: 200
+    },
+    {
+        id: "c5q2",
+        question: "Sanford Redmond helped diners by automating the production of this unit of butter.",
+        ans1: "What is a stick?",
+        ans2: "What is a pat?",
+        ans3: "What is a load?",
+        rightAns: "ans2",
+        amount: 400
+    },
+    {
+        id: "c5q3",
+        question: "Since 1911, the Iowa State Fair has featured one of these sculpted from 600 pounds of pure cream butter.",
+        ans1: "What is a butter pig?",
+        ans2: "What is a butter churn?",
+        ans3: "What is a butter cow?",
+        rightAns: "ans3",
+        amount: 600
+    },
+    {
+        id: "c5q4",
+        question: "Da, Russian cookbook \"Please to the Table\" has recipe for this crispy chicken dish that squirts butter.",
+        ans1: "What is chicken Kiev?",
+        ans2: "",
+        ans3: "",
+        rightAns: "ans1",
+        amount: 800
+    },
+    {
+        id: "c5q5",
+        question: "Sanskrit for \"to sprinkle\" gives us this word for a clarified butter.",
+        ans1: "?",
+        ans2: "What is tallow?",
+        ans3: "What is ghee?",
+        rightAns: "ans3",
+        amount: 1000
+    },
+    //cat 6
+    {
+        id: "c6q1",
+        question: "In December 1848 President Polk gave Congress the news that \"the supply\" of this in California \"is very large\".",
+        ans1: "",
+        ans2: "What is gold?",
+        ans3: "",
+        rightAns: "ans2",
+        amount: 200
+    },
+    {
+        id: "c6q2",
+        question: "Founded by a Qatari emir, this news entity tried a U.S. version of its news channel from 2013 to 2016.",
+        ans1: "",
+        ans2: "What is Al Jazeera?",
+        ans3: "",
+        rightAns: "ans2",
+        amount: 400
+    },
+    {
+        id: "c6q3",
+        question: "One theory says this Virginia port got its name from an English captain who brought news to settlers at Jamestown.",
+        ans1: "",
+        ans2: "",
+        ans3: "What is Newport News?",
+        rightAns: "ans3",
+        amount: 600
+    },
+    {
+        id: "c6q4",
+        question: "This Hungarian-born physicist later regretted the sexism in his telegram \"it's a boy\" when an H-bomb test worked.",
+        ans1: "Who is Edward Teller?",
+        ans2: "",
+        ans3: "",
+        rightAns: "ans1",
+        amount: 800
+    },
+    {
+        id: "c6q5",
+        question: "He ran the original marathon, bringing Athens news of the battle.",
+        ans1: "Who is Pheidippides?",
+        ans2: "Who is Hermes?",
+        ans3: "Who is Hephaistos?",
+        rightAns: "ans1",
+        amount: 1000
+    },
+
+
+    // {
+    //     id: "",
+    //     question: "Mark Twain referred to her as the little lady who started the Civil War.",
+    //     ans1: "",
+    //     ans2: "",
+    //     ans3: "Who is Harriet Beecher Stowe",
+    //     rightAns: "ans3",
+    //     amount: 5000
+    // },
     //Category 4 - 
 ];
 let fJExplanation = "Final Question! This question is worth $4000 points."
@@ -162,27 +302,6 @@ let selectedA;
 let newScore;
 let clearClass;
 let spentQuestions = ['hi'];
-
-// let calculateScore = function () {
-//     if (selectedA === rightAns) {
-//         console.log("correct!");
-//         alert("Correct Answer");
-//         console.log("quesition value is " + currentQObj.amount);
-//         //add selectedQ value to player score
-//         player1Score = player1Score + currentQObj.amount;
-//         console.log("player1Score is " + player1Score);
-//         $(".p1-score").html("$" + player1Score);f
-//         $(".modalOverlay").hide();
-//     } else {
-//         console.log("wrong answer");
-//         alert("Wrong Answer");
-//         player1Score = player1Score - currentQObj.amount;
-//         $(".p1-score").html("$" + player1Score)
-//         $(".modalOverlay").hide();
-//     }
-// };
-
-
 
 //start jQuery
 $(function () {
@@ -201,6 +320,7 @@ $(function () {
         //store unique id class of div clicked in variable
         selectedQ = $(this).attr('class').split(' ')[1];
         $(this).off('click');
+        $(this).removeClass("hover");
         console.log(selectedQ);
         for (let i = 0; i < qAndA.length; i++) {
             if (selectedQ === qAndA[i].id) {
@@ -228,13 +348,11 @@ $(function () {
         console.log(questionCount);
         //get unique id of ansBtn pressed (may need to be above in for or if loop)
         let selectedA = $(this).attr('class').split(' ')[1]
-        $(".question").addClass("done");
         console.log(selectedA);
         console.log(rightAns);
         // calculateScore();
         if (selectedA === rightAns) {
             console.log("correct!");
-            // alert("Correct Answer");
             console.log("quesition value is " + currentQObj.amount);
             //add selectedQ value to player score
             player1Score = player1Score + currentQObj.amount;
@@ -249,18 +367,18 @@ $(function () {
             $(".modalOverlay").hide();
         }
         //final jeopardy prompt
-        if (questionCount === 29) {
+        if (questionCount === 0) {
             //pop up final question modal
             $(".final-modal").css("display", "flex");
             $(".fj-explanation").html(fJExplanation);
-            $(".final-question").html(finalQ)
+            $(".final-question").html(finalQ);
+            $(".f-ans1").html("Who is Roger Rabbit");
+            $(".f-ans2").html("Who is Agatha Christie?");
+            $(".f-ans3").html("Who is Harriet Beecher Stowe");
+
             //check to see if final score is greater than zero
             console.log("all questions answered")
         }
-
-
     })
-
-
 });
 //end jQuery
