@@ -9,4 +9,4 @@ In Jeorpardy! there are 6 themed categories with 30 "answers" total. A player se
 
 [Trello board](https://trello.com/b/O6qorD64/jeopardy)
 
-![Whiteboarding](images/Project1-wb1.png)
+![Whiteboarding1](images/Project1-wb1.png)
