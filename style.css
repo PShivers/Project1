@@ -79,8 +79,10 @@
    
 }
 
-.gameBoard {
+.game-board {
     background: black;
+    border-style: inset;
+    border: 30px white;
     display: flex;
     flex-direction: column;
     width: 60%;
@@ -233,9 +235,9 @@
 .final-jeopardy {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background: #060CE9;
+    background-image: url("images/blank_jeopardy_screen_by_drewmandew_dcwx9jx-pre.jpg");/*https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/c3f34d4f-0676-4857-9fd9-cc10807708af/dcwx9jx-64f09dc2-abff-4aae-9787-153f19b93f27.png/v1/fill/w_1192,h_670,q_70,strp/blank_jeopardy_screen_by_drewmandew_dcwx9jx-pre.jpg*/
     height: 75%;
     width: 70%;
     border-style: inset;
@@ -245,10 +247,12 @@
 .fj-top {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    text-align: center;
     width: 100%;
     height: 70%;
+
 }
 
 .fj-btm {
@@ -263,22 +267,45 @@
 
 .f-ans1, .f-ans2, .f-ans3 {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 33%;
-    font-size: 100%;
-    color: #fad201;
+    font-size: 200%;
+    text-align: center;
+    font-family: 'Gochi Hand', cursive;
     border-color: #fad201;
+    border: 10px;
     height: 100%;
     margin:.15%;
 }
 
-.f-ans1, .f-ans2, .f-ans3:hover {
+.f-ans1:hover, .f-ans2:hover, .f-ans3:hover {
     cursor: pointer;
+    text-decoration-line: underline;
+}
+
+.response1, .response2, .response3 {
+    color: #fad201;
+}
+
+.wager {
+    color: white;
 }
 
 .fj-explanation {
+    margin: 2% 0;
+    text-align: center;
+    font-size: 100%;
+    color: white;
+}
 
+.final-question {
+    margin: 18% 5% 0 5%;
+    text-align: center;
+    font-size: 250%;
+    color: white;
+    text-shadow: 2px 2px 1px black;
 }
 
 .results-modal {

@@ -290,7 +290,7 @@ let qAndA = [
     // },
     //Category 4 - 
 ];
-let fJExplanation = "Final Question! This question is worth $4000 points. Choose wisely because you must have a positive score to win the game."
+let fJExplanation = "Final Question! This question is worth $4000 points. <br> In order to win you must have a positive amount of money, so choose wisely."
 let finalQ = "Mark Twain referred to her as the little lady who started the Civil War."
 let questionCount = 30;
 let player1Score = 0;
@@ -369,9 +369,9 @@ $(function () {
             //load final jep data
             $(".fj-explanation").html(fJExplanation);
             $(".final-question").html(finalQ);
-            $(".f-ans1").html("Who is Jane Austen?");
-            $(".f-ans2").html("Who is Louisa May Alcott?");
-            $(".f-ans3").html("Who is Harriet Beecher Stowe");
+            $(".response1").html("Who is Jane Austen?");
+            $(".response2").html("Who is Louisa May Alcott?");
+            $(".response3").html("Who is Harriet Beecher Stowe?");
             rightAns = "f-ans3";
             $(".f-ans-btn").on('click', function () {
                 selectedA = $(this).attr('class').split(' ')[1]
