@@ -303,15 +303,35 @@ let newScore;
 let clearClass;
 let spentQuestions = ['hi'];
 
+let checkScore = function () {
+    if (player1Score < 0) {
+        $(".player1").css("background", "red");
+    } else {
+        $(".player1").css("background", "#060ce9");
+    }
+}
+let calculateScore = function () {
+    if (selectedA === rightAns) {
+        alert("correct!");
+        //add selectedQ value to player score
+        player1Score = player1Score + currentQObj.amount;
+        checkScore();
+        $(".p1-score").html("$" + player1Score);
+        $(".modalOverlay").hide();
+    } else {
+        alert("Wrong Answer");
+        player1Score = player1Score - currentQObj.amount;
+        checkScore();
+        $(".p1-score").html("$" + player1Score)
+        $(".modalOverlay").hide();
+    }
+}
+
 //start jQuery
 $(function () {
-
-    console.log("js + jquery linked");
-    // console.log(spentQuestions)
     $(".p1-score").html("$" + player1Score);
     $(".p2-score").html("$" + player2Score);
     $(".start-btn").click(function () {
-        console.log("start btn clicked")
         $(".start-modal").hide();
     });
 
@@ -319,13 +339,13 @@ $(function () {
     $(".question").click(function () {
         //store unique id class of div clicked in variable
         selectedQ = $(this).attr('class').split(' ')[1];
+        //clear click and hover functionality
         $(this).off('click');
         $(this).removeClass("hover");
         console.log(selectedQ);
         for (let i = 0; i < qAndA.length; i++) {
             if (selectedQ === qAndA[i].id) {
-                console.log("matching")
-                //then push items inside question[i] to modal
+                //populate modal with object[i] values
                 $(".currentQText").html(qAndA[i].question);
                 $(".ans1").html(qAndA[i].ans1);
                 $(".ans2").html(qAndA[i].ans2);
@@ -336,8 +356,6 @@ $(function () {
             } $(".modalOverlay").show();
         };
     });
-    //clear click and hover functionality
-    //propagate object values into modal
 
     //start timer
 
@@ -353,24 +371,24 @@ $(function () {
         // calculateScore();
         if (selectedA === rightAns) {
             alert("correct!");
-            console.log("quesition value is " + currentQObj.amount);
             //add selectedQ value to player score
             player1Score = player1Score + currentQObj.amount;
-            console.log("player1Score is " + player1Score);
+            checkScore();
             $(".p1-score").html("$" + player1Score);
             $(".modalOverlay").hide();
         } else {
             alert("Wrong Answer");
             player1Score = player1Score - currentQObj.amount;
+            checkScore();
             $(".p1-score").html("$" + player1Score)
             $(".modalOverlay").hide();
         }
         //final jeopardy prompt
-        if (questionCount === 29) {
+        if (questionCount === 0) {
             //pop up final question modal
             $(".final-modal").css("display", "flex");
             $(".fj-explanation").html(fJExplanation);
-            $("btn").click(function () {
+            $("final-jeopardy").click(function () {
                 $(".final-question").html(finalQ);
                 $(".f-ans1").html("Who is Roger Rabbit");
                 $(".f-ans2").html("Who is Agatha Christie?");
