@@ -317,13 +317,13 @@ let calculateScore = function () {
         player1Score = player1Score + currentQObj.amount;
         checkScore();
         $(".p1-score").html("$" + player1Score);
-        $(".modalOverlay").hide();
+        $(".modal-overlay").hide();
     } else {
         alert("Wrong Answer");
         player1Score = player1Score - currentQObj.amount;
         checkScore();
         $(".p1-score").html("$" + player1Score)
-        $(".modalOverlay").hide();
+        $(".modal-overlay").hide();
     }
 }
 
@@ -353,7 +353,7 @@ $(function () {
                 rightAns = qAndA[i].rightAns;
                 currentQObj = qAndA[i]
                 $(this).html("");
-            } $(".modalOverlay").show();
+            } $(".modal-overlay").css("display", "flex");
         };
     });
 
@@ -361,43 +361,61 @@ $(function () {
 
 
     //on answering
-    $(".ansBtn").on('click', function () {
+    $(".ans-btn").on('click', function () {
         questionCount--;
-        console.log(questionCount);
-        //get unique id of ansBtn pressed (may need to be above in for or if loop)
-        let selectedA = $(this).attr('class').split(' ')[1]
-        console.log(selectedA);
-        console.log(rightAns);
-        // calculateScore();
-        if (selectedA === rightAns) {
-            alert("correct!");
-            //add selectedQ value to player score
-            player1Score = player1Score + currentQObj.amount;
-            checkScore();
-            $(".p1-score").html("$" + player1Score);
-            $(".modalOverlay").hide();
-        } else {
-            alert("Wrong Answer");
-            player1Score = player1Score - currentQObj.amount;
-            checkScore();
-            $(".p1-score").html("$" + player1Score)
-            $(".modalOverlay").hide();
-        }
-        //final jeopardy prompt
-        if (questionCount === 0) {
+        if (questionCount === 29) {
             //pop up final question modal
             $(".final-modal").css("display", "flex");
+            //load final jep data
             $(".fj-explanation").html(fJExplanation);
-            $("final-jeopardy").click(function () {
-                $(".final-question").html(finalQ);
-                $(".f-ans1").html("Who is Roger Rabbit");
-                $(".f-ans2").html("Who is Agatha Christie?");
-                $(".f-ans3").html("Who is Harriet Beecher Stowe");
+            $(".final-question").html(finalQ);
+            $(".f-ans1").html("Who is Jane Austen?");
+            $(".f-ans2").html("Who is Louisa May Alcott?");
+            $(".f-ans3").html("Who is Harriet Beecher Stowe");
+            rightAns = "f-ans3";
+            $(".f-ans-btn").on('click', function () {
+                selectedA = $(this).attr('class').split(' ')[1]
+                if (selectedA === rightAns) {
+                    player1Score = player1Score + 4000;
+                    checkScore();
+                    $(".p1-score").html("$" + player1Score);
+                } else {
+                    player1Score = player1Score - 4000;
+                    checkScore();
+                    $(".p1-score").html("$" + player1Score)
+                    if (player1Score > 0) {
+                        alert("oooopps");
+                    }
+                }
+                if (player1Score > 0) {
+                    $(".win-or-lose").html("You win! Good Job! You are on your way to beating Ken and Mark for sure. ");
+                    $(".final-score-number").html("$" + player1Score)
+                    $(".results-modal").css("display", "flex")
+                } else {
+                    $(".win-or-lose").html("You Lose. Maybe try Are you smarter than a 5th grader?...");
+                    $(".final-score-number").html("$" + player1Score)
+                    $(".results-modal").css("display", "flex")
+                }
             })
-
-
             //check to see if final score is greater than zero
-            console.log("all questions answered")
+        } else {
+            //get unique id of ans-btn pressed
+            selectedA = $(this).attr('class').split(' ')[1]
+            // calculateScore();
+            if (selectedA === rightAns) {
+                // alert("correct!");
+                //add selectedQ value to player score
+                player1Score = player1Score + currentQObj.amount;
+                checkScore();
+                $(".p1-score").html("$" + player1Score);
+                $(".modal-overlay").hide();
+            } else {
+                // alert("Wrong Answer");
+                player1Score = player1Score - currentQObj.amount;
+                checkScore();
+                $(".p1-score").html("$" + player1Score)
+                $(".modal-overlay").hide();
+            }
         }
     })
 });

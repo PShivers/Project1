@@ -1,4 +1,28 @@
+@font-face {
+    font-family: "Swiss911";
+    src: url("Swiss911.ttf") format("ttf"),
+  }
 
+.body {
+    top:0;
+    left:0;
+}
+
+.wrapper {
+    top:0;
+    left:0;
+    position: fixed;
+    background: rgba(0,0,0, .9);
+    background-image: url("images/celebjep.jpg"); /* taken from https://img.nbc.com/mpx-static/image/231/775/150215_2847142_SNL40__Celebrity_Jeopardy.jpg*/
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 100vw; 
+    align-items: center;
+}
 
 .start-modal {
     top: 0;
@@ -12,6 +36,7 @@
     align-items: center;
     background: rgba(0,0,0, .9)
 }
+
 .game-title-wrapper {
     display: flex;
     flex-direction: column;
@@ -40,16 +65,6 @@
     text-shadow: 1px 1px 5px #fad201;
 }
 
-.wrapper {
-    background: rgba(0,0,0, .9);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    width: 100%; 
-    align-items: center;
-}
 
 .title {
     display: flex;
@@ -89,7 +104,7 @@
     text-align: center;
     width: 16.66%;
     margin: 3px;
-    background: #060CE9;
+    background-image: url("images/blank_jeopardy_screen_by_drewmandew_dcwx9jx-pre.jpg"); /*https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/c3f34d4f-0676-4857-9fd9-cc10807708af/dcwx9jx-64f09dc2-abff-4aae-9787-153f19b93f27.png/v1/fill/w_1192,h_670,q_70,strp/blank_jeopardy_screen_by_drewmandew_dcwx9jx-pre.jpg*/
     color: white;
     font-size: 1em;
     font-family: 'Heebo', sans-serif;
@@ -103,10 +118,11 @@
 }
 
 .question {
+    font-family: 'Swiss911';
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #060CE9;
+    background-image: url("images/blank_jeopardy_screen_by_drewmandew_dcwx9jx-pre.jpg"); /*https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/c3f34d4f-0676-4857-9fd9-cc10807708af/dcwx9jx-64f09dc2-abff-4aae-9787-153f19b93f27.png/v1/fill/w_1192,h_670,q_70,strp/blank_jeopardy_screen_by_drewmandew_dcwx9jx-pre.jpg*/
     color: #fad201;
     width: 16.6%;
     margin: 3px;
@@ -133,14 +149,14 @@
 .player1, .player2 {
     font-size:200%;
     padding: 0 3%;
-    /* display: flex;
-    text-align: center; */
-    background: #060CE9;
+    background-image: url("images/blank_jeopardy_screen_by_drewmandew_dcwx9jx-pre.jpg");/*https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/c3f34d4f-0676-4857-9fd9-cc10807708af/dcwx9jx-64f09dc2-abff-4aae-9787-153f19b93f27.png/v1/fill/w_1192,h_670,q_70,strp/blank_jeopardy_screen_by_drewmandew_dcwx9jx-pre.jpg*/
     border-style: inset;
 }
 
-.modalOverlay {
+.modal-overlay {
     display: none;
+    justify-content: center;
+    align-items: center;
     background: rgba(0,0,0,.9);
     position: fixed;
     left: 0;
@@ -150,22 +166,23 @@
     width: 100%;
 }
 
+.modalText {
+    background-image: url("images/blank_jeopardy_screen_by_drewmandew_dcwx9jx-pre.jpg");/*https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/c3f34d4f-0676-4857-9fd9-cc10807708af/dcwx9jx-64f09dc2-abff-4aae-9787-153f19b93f27.png/v1/fill/w_1192,h_670,q_70,strp/blank_jeopardy_screen_by_drewmandew_dcwx9jx-pre.jpg*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+}
+
 .question-half {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height:70%;
+    height:80%;
     margin: 5%;
-}
-
-.answers-half {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
-    height:30%;
-    width:100%;
 }
 
 .currentQText {
@@ -178,11 +195,19 @@
     text-shadow: 2px 2px 1px black;
 }
 
+.answers-half {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    height:20%;
+    width:100%;
+}
+
 .ans1, .ans2, .ans3 {
     font-size: 100%;
-    color: #fad201;
-    border-color: #fad201;
-    background: #060CE9;
+    /* border-color: #fad201; */
+    /* background: papayawhip; */
     width: 100%;
     height: 100%;
     margin:.15%;
@@ -190,17 +215,6 @@
 
 .ans1, .ans2, .ans3:hover {
     cursor: pointer;
-}
-
-.modalText {
-    background: #060CE9;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    width: 50%;
-    height: 50%;
-    margin: 12% 25% 0;
 }
 
 .final-modal {
@@ -226,7 +240,6 @@
     width: 70%;
     border-style: inset;
     color: white;
-    
 }
 
 .fj-top {
@@ -260,6 +273,25 @@
     margin:.15%;
 }
 
+.f-ans1, .f-ans2, .f-ans3:hover {
+    cursor: pointer;
+}
+
 .fj-explanation {
 
+}
+
+.results-modal {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    position:fixed;
+    width: 100%;
+    height:100%;
+    z-index: 3;
+    background-image: url("images/jeop_logo_large.lrg.jpg"); /*https://www.thoughtco.com/thmb/-1IkuMGHyqL3eNeZ04ep70HVCPo=/1920x1080/filters:fill(auto,1)/jeop_logo_large-58bacf375f9b58af5cb69e2f.jpg*/
+    background-size: 100% 100%;
 }
