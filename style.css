@@ -311,8 +311,9 @@
 .results-modal {
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    text-align: center;
     top: 0;
     left: 0;
     position:fixed;
@@ -321,4 +322,54 @@
     z-index: 3;
     background-image: url("images/jeop_logo_large.lrg.jpg"); /*https://www.thoughtco.com/thmb/-1IkuMGHyqL3eNeZ04ep70HVCPo=/1920x1080/filters:fill(auto,1)/jeop_logo_large-58bacf375f9b58af5cb69e2f.jpg*/
     background-size: 100% 100%;
+}
+
+.win-or-lose {
+    font-size: 300%;
+    position: fixed;
+    top: 10%;
+    color: white;
+    text-shadow:    /*https://css-tricks.com/adding-stroke-to-web-text/*/
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000;
+}
+
+.your-final-score {
+    font-size: 300%;
+    position: fixed;
+    top: 23%;
+    color: white;
+    text-shadow:  /*https://css-tricks.com/adding-stroke-to-web-text/*/
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000;
+}
+
+.thanks {
+    color: white;
+    text-shadow:    /*https://css-tricks.com/adding-stroke-to-web-text/*/
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000;
+}
+
+.play-again {
+    font-size: 150%;
+    position: fixed;
+    top: 75%;
+    color: white;
+    text-shadow:    /*https://css-tricks.com/adding-stroke-to-web-text/*/
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000;
+}
+
+.play-again:hover {
+    cursor: pointer;
+    color: #fad201;
 }

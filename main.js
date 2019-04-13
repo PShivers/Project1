@@ -388,11 +388,11 @@ $(function () {
                     }
                 }
                 if (player1Score > 0) {
-                    $(".win-or-lose").html("You win! Good Job! You are on your way to beating Ken and Mark for sure. ");
+                    $(".win-or-lose").html("You win! Good Job!<br>You are on your way to beating Ken and Mark for sure. ");
                     $(".final-score-number").html("$" + player1Score)
                     $(".results-modal").css("display", "flex")
                 } else {
-                    $(".win-or-lose").html("You Lose. Maybe try Are you smarter than a 5th grader?...");
+                    $(".win-or-lose").html("You Lose... better luck next time!");
                     $(".final-score-number").html("$" + player1Score)
                     $(".results-modal").css("display", "flex")
                 }
@@ -417,6 +417,10 @@ $(function () {
                 $(".modal-overlay").hide();
             }
         }
+    })
+
+    $(".play-again").click(function () {
+        location.reload();
     })
 });
 //end jQuery
