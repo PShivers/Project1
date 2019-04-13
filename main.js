@@ -290,7 +290,7 @@ let qAndA = [
     // },
     //Category 4 - 
 ];
-let fJExplanation = "Final Question! This question is worth $4000 points."
+let fJExplanation = "Final Question! This question is worth $4000 points. Choose wisely because you must have a positive score to win the game."
 let finalQ = "Mark Twain referred to her as the little lady who started the Civil War."
 let questionCount = 30;
 let player1Score = 0;
@@ -352,7 +352,7 @@ $(function () {
         console.log(rightAns);
         // calculateScore();
         if (selectedA === rightAns) {
-            console.log("correct!");
+            alert("correct!");
             console.log("quesition value is " + currentQObj.amount);
             //add selectedQ value to player score
             player1Score = player1Score + currentQObj.amount;
@@ -360,21 +360,23 @@ $(function () {
             $(".p1-score").html("$" + player1Score);
             $(".modalOverlay").hide();
         } else {
-            console.log("wrong answer");
-            // alert("Wrong Answer");
+            alert("Wrong Answer");
             player1Score = player1Score - currentQObj.amount;
             $(".p1-score").html("$" + player1Score)
             $(".modalOverlay").hide();
         }
         //final jeopardy prompt
-        if (questionCount === 0) {
+        if (questionCount === 29) {
             //pop up final question modal
             $(".final-modal").css("display", "flex");
             $(".fj-explanation").html(fJExplanation);
-            $(".final-question").html(finalQ);
-            $(".f-ans1").html("Who is Roger Rabbit");
-            $(".f-ans2").html("Who is Agatha Christie?");
-            $(".f-ans3").html("Who is Harriet Beecher Stowe");
+            $("btn").click(function () {
+                $(".final-question").html(finalQ);
+                $(".f-ans1").html("Who is Roger Rabbit");
+                $(".f-ans2").html("Who is Agatha Christie?");
+                $(".f-ans3").html("Who is Harriet Beecher Stowe");
+            })
+
 
             //check to see if final score is greater than zero
             console.log("all questions answered")
