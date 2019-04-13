@@ -2,7 +2,7 @@ Jeopardy! Project
 
 Overview
 
-Jeorpardy! is a game in which 2-3 Players can take turns selecting "answers" from a different categories and giving the "question". The first player to ring in has a certain amount fo time to respond. If the response is correct the player will bank the money value of the "answer". It is then their turn to choose the next "answer". if no one responds correctly or no one buzzes in the last Player choose is still in control. The player with the most money when there are no more "answers" on the board is the winner.
+In Jeorpardy! there are 6 themed categories with 30 "answers" total. A player selects "answers" of their choice from a category/monetary value and is given multiple "questions" to choose from. The categories are usually hints to the correct response. If the player chooses the correct "question" then player will bank the money value of the chosen "answer" to their score and if they choose incorrectly they will have that money value deducted from their score. This continues until there are no more "answers" available on the board at which point the player will prompted by the final Jeopardy "answer", worth a substantial amount of money, after which the game will be over. The player will win if they have more than zero dollars banked after final Jeopardy.
 
 
 [Game site](https://pshivers.github.io/Project1/)
