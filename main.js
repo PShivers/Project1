@@ -33,8 +33,8 @@ let qAndA = [
         id: "c1q4",
         question: "John Mortimer's stories about this odd British defense lawyer \"of the Bailey\" were collected in \"Forever\" him.",
         ans1: "Who is Rumpole?",
-        ans2: "",
-        ans3: "",
+        ans2: "Who is Sherlock?",
+        ans3: "Who is Phineas?",
         rightAns: "ans1",
         amount: 800
     },
@@ -62,7 +62,7 @@ let qAndA = [
         question: "You think you got the stones to play this sport? Well, if you have the granite type, you sure do.",
         ans1: "What is bocce ball",
         ans2: "What is curling?",
-        ans3: "",
+        ans3: "What is rock, paper, scissors?",
         rightAns: "ans2",
         amount: 400
     },
@@ -97,8 +97,8 @@ let qAndA = [
     {
         id: "c3q1",
         question: "It sounds like a swimming style, but this occurs when your body temperature rises to 104 degrees; be wary.",
-        ans1: "",
-        ans2: "",
+        ans1: "What is doggy pants?",
+        ans2: "What is water-back?",
         ans3: "What is heatstroke?",
         rightAns: "ans3",
         amount: 200
@@ -108,7 +108,7 @@ let qAndA = [
         question: "The CDC recommends 4-sided fencing around these to keep youngsters safe.",
         ans1: "What is a pool?",
         ans2: "What is a trampoline?",
-        ans3: "What is ?",
+        ans3: "What is a barbecue pit?",
         rightAns: "ans1",
         amount: 400
     },
@@ -116,8 +116,8 @@ let qAndA = [
         id: "c3q3",
         question: "Swim parallel to the shore to reach safety if you encounter one of these swift-moving currents that can move at 8 feet per second.",
         ans1: "What is a riptide?",
-        ans2: "",
-        ans3: "",
+        ans2: "What is a tidal wave?",
+        ans3: "What is a dolphin current?",
         rightAns: "ans1",
         amount: 600
     },
@@ -125,7 +125,7 @@ let qAndA = [
         id: "c3q4",
         question: "Products with this number at 30 block 97% of UVB rays, which is pretty darn good.",
         ans1: "What is ABV?",
-        ans2: "",
+        ans2: "What is CBD?",
         ans3: "What is SPF?",
         rightAns: "ans3",
         amount: 800
@@ -153,26 +153,26 @@ let qAndA = [
         id: "c4q2",
         question: "Hand shackles.",
         ans1: "What are manacles?",
-        ans2: "",
-        ans3: "",
+        ans2: "What are handcuffs?",
+        ans3: "What are mancuffs?",
         rightAns: "ans1",
         amount: 400
     },
     {
         id: "c4q3",
         question: "It's your destiny to know this 8-letter word means \"to show plainly\"",
-        ans1: "what is manifest?",
-        ans2: "",
-        ans3: "",
+        ans1: "What is manifest?",
+        ans2: "What is manufacture?",
+        ans3: "What is emancipate?",
         rightAns: "ans1",
         amount: 600
     },
     {
         id: "c4q4",
         question: "A royal command, or one from a superior court to a lower one.",
-        ans1: "What is a ?",
+        ans1: "What is a permanent?",
         ans2: "What is a mandate?",
-        ans3: "",
+        ans3: "What is a management?",
         rightAns: "ans2",
         amount: 800
     },
@@ -180,7 +180,7 @@ let qAndA = [
         id: "c4q5",
         question: "It conveys air & fuel from the carburetor to the cylinders.",
         ans1: "What is a manifort?",
-        ans2: "",
+        ans2: "What is a mandible?",
         ans3: "What is a manifold?",
         rightAns: "ans3",
         amount: 1000
@@ -217,15 +217,15 @@ let qAndA = [
         id: "c5q4",
         question: "Da, Russian cookbook \"Please to the Table\" has recipe for this crispy chicken dish that squirts butter.",
         ans1: "What is chicken Kiev?",
-        ans2: "",
-        ans3: "",
+        ans2: "What is Borscht ",
+        ans3: "What is Solyanka",
         rightAns: "ans1",
         amount: 800
     },
     {
         id: "c5q5",
         question: "Sanskrit for \"to sprinkle\" gives us this word for a clarified butter.",
-        ans1: "?",
+        ans1: "What is paneer?",
         ans2: "What is tallow?",
         ans3: "What is ghee?",
         rightAns: "ans3",
@@ -235,26 +235,26 @@ let qAndA = [
     {
         id: "c6q1",
         question: "In December 1848 President Polk gave Congress the news that \"the supply\" of this in California \"is very large\".",
-        ans1: "",
+        ans1: "What is raisins?",
         ans2: "What is gold?",
-        ans3: "",
+        ans3: "What is silver?",
         rightAns: "ans2",
         amount: 200
     },
     {
         id: "c6q2",
         question: "Founded by a Qatari emir, this news entity tried a U.S. version of its news channel from 2013 to 2016.",
-        ans1: "",
+        ans1: "What is The Jerusalem Post?",
         ans2: "What is Al Jazeera?",
-        ans3: "",
+        ans3: "What is Al Shabab?",
         rightAns: "ans2",
         amount: 400
     },
     {
         id: "c6q3",
         question: "One theory says this Virginia port got its name from an English captain who brought news to settlers at Jamestown.",
-        ans1: "",
-        ans2: "",
+        ans1: "What is Infocove?",
+        ans2: "What is Newstown?",
         ans3: "What is Newport News?",
         rightAns: "ans3",
         amount: 600
@@ -263,8 +263,8 @@ let qAndA = [
         id: "c6q4",
         question: "This Hungarian-born physicist later regretted the sexism in his telegram \"it's a boy\" when an H-bomb test worked.",
         ans1: "Who is Edward Teller?",
-        ans2: "",
-        ans3: "",
+        ans2: "Who is Robert Oppenheimer?",
+        ans3: "Who is Enrico Fermi?",
         rightAns: "ans1",
         amount: 800
     },
@@ -290,8 +290,9 @@ let qAndA = [
     // },
     //Category 4 - 
 ];
-let fJExplanation = "Final Question! This question is worth $4000 points. <br> In order to win you must have a positive amount of money, so choose wisely."
-let finalQ = "Mark Twain referred to her as the little lady who started the Civil War."
+
+let fJExplanation = "Final Question! This question is worth $4000 points. <br> In order to win you must have a positive amount of money, so choose wisely.";
+let finalQ = "Her 1896 New York Times obituary called her \"the writer of probably the most widely read work of fiction ever penned\".";
 let questionCount = 30;
 let player1Score = 0;
 let player2Score = 0;
@@ -309,7 +310,7 @@ let checkScore = function () {
     } else {
         $(".player1").css("background", "#060ce9");
     }
-}
+};
 let calculateScore = function () {
     if (selectedA === rightAns) {
         alert("correct!");
@@ -325,8 +326,7 @@ let calculateScore = function () {
         $(".p1-score").html("$" + player1Score)
         $(".modal-overlay").hide();
     }
-}
-
+};
 //start jQuery
 $(function () {
     $(".p1-score").html("$" + player1Score);
@@ -334,7 +334,6 @@ $(function () {
     $(".start-btn").click(function () {
         $(".start-modal").hide();
     });
-
     //clicking any question brings up modal
     $(".question").click(function () {
         //store unique id class of div clicked in variable
@@ -356,14 +355,10 @@ $(function () {
             } $(".modal-overlay").css("display", "flex");
         };
     });
-
-    //start timer
-
-
     //on answering
     $(".ans-btn").on('click', function () {
         questionCount--;
-        if (questionCount === 29) {
+        if (questionCount === 15) {
             //pop up final question modal
             $(".final-modal").css("display", "flex");
             //load final jep data
@@ -388,7 +383,7 @@ $(function () {
                     }
                 }
                 if (player1Score > 0) {
-                    $(".win-or-lose").html("You win! Good Job!<br>You are on your way to beating Ken and Mark for sure. ");
+                    $(".win-or-lose").html("You win! Good Job!");
                     $(".final-score-number").html("$" + player1Score)
                     $(".results-modal").css("display", "flex")
                 } else {
@@ -417,10 +412,19 @@ $(function () {
                 $(".modal-overlay").hide();
             }
         }
-    })
+    });
+
+    $(".rules").click(function () {
+        $(".rules-wrapper").css("display", "flex");
+    });
+
+    $(".go-back").click(function () {
+        $(".rules-wrapper").css("display", "none");
+    });
 
     $(".play-again").click(function () {
         location.reload();
-    })
+    });
+    $(".")
 });
 //end jQuery
