@@ -60,7 +60,7 @@ let qAndA = [
     {
         id: "c2q2",
         question: "You think you got the stones to play this sport? Well, if you have the granite type, you sure do.",
-        ans1: "What is bocce ball",
+        ans1: "What is bocce ball?",
         ans2: "What is curling?",
         ans3: "What is rock, paper, scissors?",
         rightAns: "ans2",
@@ -179,7 +179,7 @@ let qAndA = [
     {
         id: "c4q5",
         question: "It conveys air & fuel from the carburetor to the cylinders.",
-        ans1: "What is a manifort?",
+        ans1: "What is a manafort?",
         ans2: "What is a mandible?",
         ans3: "What is a manifold?",
         rightAns: "ans3",
@@ -217,8 +217,8 @@ let qAndA = [
         id: "c5q4",
         question: "Da, Russian cookbook \"Please to the Table\" has recipe for this crispy chicken dish that squirts butter.",
         ans1: "What is chicken Kiev?",
-        ans2: "What is Borscht ",
-        ans3: "What is Solyanka",
+        ans2: "What is Borscht?",
+        ans3: "What is Solenya?",
         rightAns: "ans1",
         amount: 800
     },
@@ -303,12 +303,11 @@ let selectedA;
 let newScore;
 let clearClass;
 let spentQuestions = ['hi'];
-
 let checkScore = function () {
     if (player1Score < 0) {
-        $(".player1").css("background", "red");
+        $(".player1").css("background", "#EB3333");
     } else {
-        $(".player1").css("background", "#060ce9");
+        $(".player1").css("background", "url(\"images/blank_jeopardy_screen_by_drewmandew_dcwx9jx-pre.jpg\")");
     }
 };
 let calculateScore = function () {
@@ -398,6 +397,12 @@ $(function () {
             selectedA = $(this).attr('class').split(' ')[1]
             // calculateScore();
             if (selectedA === rightAns) {
+                Swal.fire({
+                    title: 'Correct!',
+                    background: "#4EC13E",
+                    timer: 1000,
+                    showConfirmButton: false
+                });
                 // alert("correct!");
                 //add selectedQ value to player score
                 player1Score = player1Score + currentQObj.amount;
@@ -405,7 +410,12 @@ $(function () {
                 $(".p1-score").html("$" + player1Score);
                 $(".modal-overlay").hide();
             } else {
-                // alert("Wrong Answer");
+                Swal.fire({
+                    title: "Incorrect!",
+                    background: "#EB3333",
+                    timer: 1000,
+                    showConfirmButton: false
+                });
                 player1Score = player1Score - currentQObj.amount;
                 checkScore();
                 $(".p1-score").html("$" + player1Score)

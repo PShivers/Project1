@@ -408,3 +408,7 @@
     cursor: pointer;
     color: #fad201;
 }
+
+.swal-text {
+    font-size: 200%;
+}
