@@ -307,7 +307,7 @@ let populateQModal = function () {
     for (let i = 0; i < qAndA.length; i++) {
         if (selectedQ === qAndA[i].id) {
             //populate modal with object[i] values
-            $(".currentQText").html(qAndA[i].question);
+            $(".current-q-text").html(qAndA[i].question);
             $(".ans1").html(qAndA[i].ans1);
             $(".ans2").html(qAndA[i].ans2);
             $(".ans3").html(qAndA[i].ans3);
@@ -328,6 +328,7 @@ let calculateScore = function () {
         //thanks Brent
         Swal.fire({
             title: 'Correct!',
+            text: '+ ' + currentQObj.amount,
             background: "#4EC13E",
             timer: 1000,
             showConfirmButton: false
@@ -338,13 +339,14 @@ let calculateScore = function () {
         $(".p1-score").html("$" + player1Score);
         $(".modal-overlay").hide();
     } else {
+        player1Score = player1Score - currentQObj.amount;
         Swal.fire({
             title: "Incorrect!",
+            text: '- ' + currentQObj.amount,
             background: "#EB3333",
             timer: 1000,
             showConfirmButton: false
         });
-        player1Score = player1Score - currentQObj.amount;
         checkScore();
         $(".p1-score").html("$" + player1Score)
         $(".modal-overlay").hide();

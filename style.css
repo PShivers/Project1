@@ -171,7 +171,7 @@
     cursor: pointer;
 }
 
-.scoreBoard {
+.score-board {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -202,7 +202,7 @@
     width: 100%;
 }
 
-.modalText {
+.modal-text {
     background-image: url("images/blank_jeopardy_screen_by_drewmandew_dcwx9jx-pre.jpg");/*https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/c3f34d4f-0676-4857-9fd9-cc10807708af/dcwx9jx-64f09dc2-abff-4aae-9787-153f19b93f27.png/v1/fill/w_1192,h_670,q_70,strp/blank_jeopardy_screen_by_drewmandew_dcwx9jx-pre.jpg*/
     display: flex;
     flex-direction: column;
@@ -221,7 +221,7 @@
     margin: 5%;
 }
 
-.currentQText {
+.current-q-text {
     display: flex;
     justify-content: center;
     align-items: center;
