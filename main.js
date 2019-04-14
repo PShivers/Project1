@@ -303,6 +303,19 @@ let selectedA;
 let newScore;
 let clearClass;
 let spentQuestions = ['hi'];
+let populateQModal = function () {
+    for (let i = 0; i < qAndA.length; i++) {
+        if (selectedQ === qAndA[i].id) {
+            //populate modal with object[i] values
+            $(".currentQText").html(qAndA[i].question);
+            $(".ans1").html(qAndA[i].ans1);
+            $(".ans2").html(qAndA[i].ans2);
+            $(".ans3").html(qAndA[i].ans3);
+            rightAns = qAndA[i].rightAns;
+            currentQObj = qAndA[i]
+        } $(".modal-overlay").css("display", "flex");
+    };
+};
 let checkScore = function () {
     if (player1Score < 0) {
         $(".player1").css("background", "#EB3333");
@@ -326,47 +339,63 @@ let calculateScore = function () {
         $(".modal-overlay").hide();
     }
 };
+let populateFinalQ = function () {
+    //pop up final question modal
+    $(".final-modal").css("display", "flex");
+    //load final jep data
+    $(".fj-explanation").html(fJExplanation);
+    $(".final-question").html(finalQ);
+    $(".response1").html("Who is Jane Austen?");
+    $(".response2").html("Who is Louisa May Alcott?");
+    $(".response3").html("Who is Harriet Beecher Stowe?");
+    rightAns = "f-ans3";
+};
+let winOrLose = function () {
+    if (player1Score > 0) {
+        $(".win-or-lose").html("You win! Good Job!");
+        $(".final-score-number").html("$" + player1Score)
+        $(".results-modal").css("display", "flex")
+    } else {
+        $(".win-or-lose").html("You Lose... better luck next time!");
+        $(".final-score-number").html("$" + player1Score)
+        $(".results-modal").css("display", "flex")
+    }
+};
+
 //start jQuery
 $(function () {
     $(".p1-score").html("$" + player1Score);
     $(".p2-score").html("$" + player2Score);
+
     $(".start-btn").click(function () {
         $(".start-modal").hide();
     });
+
+
     //clicking any question brings up modal
     $(".question").click(function () {
         //store unique id class of div clicked in variable
         selectedQ = $(this).attr('class').split(' ')[1];
         //clear click and hover functionality
+        $(this).html("");
         $(this).off('click');
         $(this).removeClass("hover");
-        console.log(selectedQ);
-        for (let i = 0; i < qAndA.length; i++) {
-            if (selectedQ === qAndA[i].id) {
-                //populate modal with object[i] values
-                $(".currentQText").html(qAndA[i].question);
-                $(".ans1").html(qAndA[i].ans1);
-                $(".ans2").html(qAndA[i].ans2);
-                $(".ans3").html(qAndA[i].ans3);
-                rightAns = qAndA[i].rightAns;
-                currentQObj = qAndA[i]
-                $(this).html("");
-            } $(".modal-overlay").css("display", "flex");
-        };
+        populateQModal();
     });
     //on answering
     $(".ans-btn").on('click', function () {
         questionCount--;
-        if (questionCount === 15) {
-            //pop up final question modal
-            $(".final-modal").css("display", "flex");
-            //load final jep data
-            $(".fj-explanation").html(fJExplanation);
-            $(".final-question").html(finalQ);
-            $(".response1").html("Who is Jane Austen?");
-            $(".response2").html("Who is Louisa May Alcott?");
-            $(".response3").html("Who is Harriet Beecher Stowe?");
-            rightAns = "f-ans3";
+        if (questionCount === 28) {
+            populateFinalQ();
+            // //pop up final question modal
+            // $(".final-modal").css("display", "flex");
+            // //load final jep data
+            // $(".fj-explanation").html(fJExplanation);
+            // $(".final-question").html(finalQ);
+            // $(".response1").html("Who is Jane Austen?");
+            // $(".response2").html("Who is Louisa May Alcott?");
+            // $(".response3").html("Who is Harriet Beecher Stowe?");
+            // rightAns = "f-ans3";
             $(".f-ans-btn").on('click', function () {
                 selectedA = $(this).attr('class').split(' ')[1]
                 if (selectedA === rightAns) {
@@ -381,15 +410,16 @@ $(function () {
                         alert("oooopps");
                     }
                 }
-                if (player1Score > 0) {
-                    $(".win-or-lose").html("You win! Good Job!");
-                    $(".final-score-number").html("$" + player1Score)
-                    $(".results-modal").css("display", "flex")
-                } else {
-                    $(".win-or-lose").html("You Lose... better luck next time!");
-                    $(".final-score-number").html("$" + player1Score)
-                    $(".results-modal").css("display", "flex")
-                }
+                winOrLose();
+                // if (player1Score > 0) {
+                //     $(".win-or-lose").html("You win! Good Job!");
+                //     $(".final-score-number").html("$" + player1Score)
+                //     $(".results-modal").css("display", "flex")
+                // } else {
+                //     $(".win-or-lose").html("You Lose... better luck next time!");
+                //     $(".final-score-number").html("$" + player1Score)
+                //     $(".results-modal").css("display", "flex")
+                // }
             })
             //check to see if final score is greater than zero
         } else {
