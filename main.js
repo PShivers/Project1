@@ -291,7 +291,7 @@ let qAndA = [
     //Category 4 - 
 ];
 
-let fJExplanation = "Final Question! This question is worth $4000 points. <br> In order to win you must have a positive amount of money so choose wisely.";
+let fJExplanation = "Final Question! This question is worth $4000. <br> In order to win, you must have a positive amount of money, so choose wisely.";
 let finalQ = "Her 1896 New York Times obituary called her \"the writer of probably the most widely read work of fiction ever penned\".";
 let questionCount = 30;
 let player1Score = 0;
@@ -364,7 +364,9 @@ let calculateScore = function () {
         Swal.fire({
             title: "Final Question!",
             background: " #fad201",
-            timer: 5000,
+            timer: 3000,
+            allowOutsideClick: false,
+            showConfirmButton: false,
             animation: false,
             customClass: {
                 popup: 'animated flash' // https://daneden.github.io/animate.css/
