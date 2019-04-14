@@ -360,7 +360,7 @@ let calculateScore = function () {
         $(".p1-score").html("$" + player1Score)
         $(".modal-overlay").hide();
     };
-    if (questionCount === 29) {
+    if (questionCount === 0) {
         Swal.fire({
             title: "Final Question!",
             background: " #fad201",
@@ -448,6 +448,5 @@ $(function () {
     $(".play-again").click(function () {
         location.reload();
     });
-    $(".")
 });
 //end jQuery
