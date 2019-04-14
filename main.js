@@ -291,7 +291,7 @@ let qAndA = [
     //Category 4 - 
 ];
 
-let fJExplanation = "Final Question! This question is worth $4000 points. <br> In order to win you must have a positive amount of money, so choose wisely.";
+let fJExplanation = "Final Question! This question is worth $4000 points. <br> In order to win you must have a positive amount of money so choose wisely.";
 let finalQ = "Her 1896 New York Times obituary called her \"the writer of probably the most widely read work of fiction ever penned\".";
 let questionCount = 30;
 let player1Score = 0;
@@ -303,6 +303,7 @@ let selectedA;
 let newScore;
 let clearClass;
 let spentQuestions = ['hi'];
+//functions
 let populateQModal = function () {
     for (let i = 0; i < qAndA.length; i++) {
         if (selectedQ === qAndA[i].id) {
@@ -327,14 +328,14 @@ let calculateScore = function () {
     if (selectedA === rightAns) {
         //thanks Brent
         Swal.fire({
-            title: 'Correct!',
-            text: '+ ' + currentQObj.amount,
+            title: "<span id=swal>Correct!</span>",
+            text: '+ $' + currentQObj.amount,
             background: "#4EC13E",
             timer: 2250,
             showConfirmButton: false,
             animation: false,
             customClass: {
-                popup: 'animated heartBeat', //https://daneden.github.io/animate.css/
+                popup: 'animated heartBeat', // https://daneden.github.io/animate.css/
             }
         });
         //add selectedQ value to player score
@@ -345,25 +346,29 @@ let calculateScore = function () {
     } else {
         player1Score = player1Score - currentQObj.amount;
         Swal.fire({
-            title: "Incorrect!",
-            text: '- ' + currentQObj.amount,
+            title: "<span id=swal>Incorrect</span>",
+            text: '- $' + currentQObj.amount,
             background: "#EB3333",
-            timer: 2000,
+            timer: 2250,
             showConfirmButton: false,
             animation: false,
             customClass: {
-                popup: 'animated shake' //https://daneden.github.io/animate.css/
-
+                popup: 'animated shake' // https://daneden.github.io/animate.css/
             }
         });
         checkScore();
         $(".p1-score").html("$" + player1Score)
         $(".modal-overlay").hide();
     };
-    if (questionCount === 0) {
+    if (questionCount === 29) {
         Swal.fire({
             title: "Final Question!",
-            background: "#EB3333",
+            background: " #fad201",
+            timer: 5000,
+            animation: false,
+            customClass: {
+                popup: 'animated flash' // https://daneden.github.io/animate.css/
+            }
         });
         populateFinalQ();
         $(".f-ans-btn").on('click', function () {
@@ -410,7 +415,6 @@ let winOrLose = function () {
 //start jQuery
 $(function () {
     $(".p1-score").html("$" + player1Score);
-    $(".p2-score").html("$" + player2Score);
     //hide the start modal and begin game
     $(".start-btn").click(function () {
         $(".start-modal").hide();
