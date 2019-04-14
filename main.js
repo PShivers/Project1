@@ -325,18 +325,41 @@ let checkScore = function () {
 };
 let calculateScore = function () {
     if (selectedA === rightAns) {
-        alert("correct!");
+        Swal.fire({
+            title: 'Correct!',
+            background: "#4EC13E",
+            timer: 1000,
+            showConfirmButton: false
+        });
+        // alert("correct!");
         //add selectedQ value to player score
         player1Score = player1Score + currentQObj.amount;
         checkScore();
         $(".p1-score").html("$" + player1Score);
         $(".modal-overlay").hide();
     } else {
-        alert("Wrong Answer");
+        Swal.fire({
+            title: "Incorrect!",
+            background: "#EB3333",
+            timer: 1000,
+            showConfirmButton: false
+        });
         player1Score = player1Score - currentQObj.amount;
         checkScore();
         $(".p1-score").html("$" + player1Score)
         $(".modal-overlay").hide();
+    };
+    if (questionCount === 0) {
+        Swal.fire({
+            title: "Final Question!",
+            background: "#EB3333",
+        });
+        populateFinalQ();
+        $(".f-ans-btn").on('click', function () {
+            selectedA = $(this).attr('class').split(' ')[1]
+            calculateFinalScore();
+            winOrLose();
+        })
     }
 };
 let populateFinalQ = function () {
@@ -350,6 +373,17 @@ let populateFinalQ = function () {
     $(".response3").html("Who is Harriet Beecher Stowe?");
     rightAns = "f-ans3";
 };
+let calculateFinalScore = function () {
+    if (selectedA === rightAns) {
+        player1Score = player1Score + 4000;
+        checkScore();
+        $(".p1-score").html("$" + player1Score);
+    } else {
+        player1Score = player1Score - 4000;
+        checkScore();
+        $(".p1-score").html("$" + player1Score)
+    }
+}
 let winOrLose = function () {
     if (player1Score > 0) {
         $(".win-or-lose").html("You win! Good Job!");
@@ -370,8 +404,6 @@ $(function () {
     $(".start-btn").click(function () {
         $(".start-modal").hide();
     });
-
-
     //clicking any question brings up modal
     $(".question").click(function () {
         //store unique id class of div clicked in variable
@@ -385,73 +417,9 @@ $(function () {
     //on answering
     $(".ans-btn").on('click', function () {
         questionCount--;
-        if (questionCount === 28) {
-            populateFinalQ();
-            // //pop up final question modal
-            // $(".final-modal").css("display", "flex");
-            // //load final jep data
-            // $(".fj-explanation").html(fJExplanation);
-            // $(".final-question").html(finalQ);
-            // $(".response1").html("Who is Jane Austen?");
-            // $(".response2").html("Who is Louisa May Alcott?");
-            // $(".response3").html("Who is Harriet Beecher Stowe?");
-            // rightAns = "f-ans3";
-            $(".f-ans-btn").on('click', function () {
-                selectedA = $(this).attr('class').split(' ')[1]
-                if (selectedA === rightAns) {
-                    player1Score = player1Score + 4000;
-                    checkScore();
-                    $(".p1-score").html("$" + player1Score);
-                } else {
-                    player1Score = player1Score - 4000;
-                    checkScore();
-                    $(".p1-score").html("$" + player1Score)
-                    if (player1Score > 0) {
-                        alert("oooopps");
-                    }
-                }
-                winOrLose();
-                // if (player1Score > 0) {
-                //     $(".win-or-lose").html("You win! Good Job!");
-                //     $(".final-score-number").html("$" + player1Score)
-                //     $(".results-modal").css("display", "flex")
-                // } else {
-                //     $(".win-or-lose").html("You Lose... better luck next time!");
-                //     $(".final-score-number").html("$" + player1Score)
-                //     $(".results-modal").css("display", "flex")
-                // }
-            })
-            //check to see if final score is greater than zero
-        } else {
-            //get unique id of ans-btn pressed
-            selectedA = $(this).attr('class').split(' ')[1]
-            // calculateScore();
-            if (selectedA === rightAns) {
-                Swal.fire({
-                    title: 'Correct!',
-                    background: "#4EC13E",
-                    timer: 1000,
-                    showConfirmButton: false
-                });
-                // alert("correct!");
-                //add selectedQ value to player score
-                player1Score = player1Score + currentQObj.amount;
-                checkScore();
-                $(".p1-score").html("$" + player1Score);
-                $(".modal-overlay").hide();
-            } else {
-                Swal.fire({
-                    title: "Incorrect!",
-                    background: "#EB3333",
-                    timer: 1000,
-                    showConfirmButton: false
-                });
-                player1Score = player1Score - currentQObj.amount;
-                checkScore();
-                $(".p1-score").html("$" + player1Score)
-                $(".modal-overlay").hide();
-            }
-        }
+        //get unique id of ans-btn pressed
+        selectedA = $(this).attr('class').split(' ')[1]
+        calculateScore();
     });
 
     $(".rules").click(function () {
