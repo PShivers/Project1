@@ -17,7 +17,7 @@ In Jeorpardy! there are 6 themed categories with 30 "answers" total. A player se
 ![Whiteboarding3](images/project1-wb5.png)
 
 ## Wire Frames
-![WireFrame1](images/Project1-wireFrame1)
+![WireFrame1](images/Project1-wireFrame1.png)
 ![WireFrame2](images/Project1-wireFrame2)
 ![WireFrame3](images/Project1-wireFrame3)
 ![WireFrame4](images/project1-wb2.png)
