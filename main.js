@@ -330,8 +330,12 @@ let calculateScore = function () {
             title: 'Correct!',
             text: '+ ' + currentQObj.amount,
             background: "#4EC13E",
-            timer: 1000,
-            showConfirmButton: false
+            timer: 2250,
+            showConfirmButton: false,
+            animation: false,
+            customClass: {
+                popup: 'animated heartBeat', //https://daneden.github.io/animate.css/
+            }
         });
         //add selectedQ value to player score
         player1Score = player1Score + currentQObj.amount;
@@ -344,8 +348,13 @@ let calculateScore = function () {
             title: "Incorrect!",
             text: '- ' + currentQObj.amount,
             background: "#EB3333",
-            timer: 1000,
-            showConfirmButton: false
+            timer: 2000,
+            showConfirmButton: false,
+            animation: false,
+            customClass: {
+                popup: 'animated shake' //https://daneden.github.io/animate.css/
+
+            }
         });
         checkScore();
         $(".p1-score").html("$" + player1Score)
