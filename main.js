@@ -143,9 +143,9 @@ let qAndA = [
     {
         id: "c4q1",
         question: "It's a 3-D representation of human form, dummy.",
-        ans1: "What is a dummy",
-        ans2: "What is a mannequin",
-        ans3: "What is maniform",
+        ans1: "What is a dummy?",
+        ans2: "What is a mannequin?",
+        ans3: "What is maniform?",
         rightAns: "ans2",
         amount: 200
     },
@@ -325,13 +325,13 @@ let checkScore = function () {
 };
 let calculateScore = function () {
     if (selectedA === rightAns) {
+        //thanks Brent
         Swal.fire({
             title: 'Correct!',
             background: "#4EC13E",
             timer: 1000,
             showConfirmButton: false
         });
-        // alert("correct!");
         //add selectedQ value to player score
         player1Score = player1Score + currentQObj.amount;
         checkScore();
@@ -400,11 +400,11 @@ let winOrLose = function () {
 $(function () {
     $(".p1-score").html("$" + player1Score);
     $(".p2-score").html("$" + player2Score);
-
+    //hide the start modal and begin game
     $(".start-btn").click(function () {
         $(".start-modal").hide();
     });
-    //clicking any question brings up modal
+    //clicking any question brings up modal containing questions and answers
     $(".question").click(function () {
         //store unique id class of div clicked in variable
         selectedQ = $(this).attr('class').split(' ')[1];
@@ -421,15 +421,15 @@ $(function () {
         selectedA = $(this).attr('class').split(' ')[1]
         calculateScore();
     });
-
+    //display rules from start modal
     $(".rules").click(function () {
         $(".rules-wrapper").css("display", "flex");
     });
-
+    //go back to start modal from rules 
     $(".go-back").click(function () {
         $(".rules-wrapper").css("display", "none");
     });
-
+    //reload page from the results page
     $(".play-again").click(function () {
         location.reload();
     });

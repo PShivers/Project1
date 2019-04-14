@@ -115,6 +115,7 @@
 .game-board {
     background: black;
     border-style: inset;
+    border-color: antiquewhite;
     border: 30px white;
     display: flex;
     flex-direction: column;
